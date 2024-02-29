@@ -1,33 +1,64 @@
-// show and hide screen in one button
-function getHideById(elementId) {
+function hideElementById(elementId) {
    const element = document.getElementById(elementId);
-   element.classList.add('hidden')
+   element.classList.add('hidden');
 }
-function getShowBuId(elementId) {
+
+function showElementById(elementId) {
    const element = document.getElementById(elementId);
-   element.classList.remove('hidden')
+   element.classList.remove('hidden');
+}
+
+function setBackgroundColorById(elementId){
+   const element = document.getElementById(elementId);
+   element.classList.add('bg-orange-400');
+}
+
+function removeBackgroundColorById(elementId){
+   const element = document.getElementById(elementId);
+   element.classList.remove('bg-orange-400');
 }
 
 
-// random alphabet math
-function randomAlphabet() {
+function getTextElementValueById(elementId){
+   const element = document.getElementById(elementId);
+   const elementValueText = element.innerText;
+   const value = parseInt(elementValueText);
+   return value;
+}
+
+function setTextElementValueById(elementId, value){
+   const element = document.getElementById(elementId);
+   element.innerText = value;
+}
+
+function getElementTextById(elementId){
+   const element = document.getElementById(elementId);
+   const text = element.innerText;
+   return text;
+}
+
+function getARandomAlphabet(){
    const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
    const alphabets = alphabetString.split('');
-   const alphabetNumber = Math.random(alphabets) * 25;
-   const index = Math.round(alphabetNumber);
-   const alpha = alphabets[index];
-   return alpha;
+
+   const randomNumber = Math.random()*25;
+   const index = Math.round(randomNumber);
+
+   const alphabet = alphabets[index];
+   return alphabet;
 }
 
-// set color
-function setBackgroundColor(elementId){
-   const element=document.getElementById(elementId);
-   element.classList.add('bg-orange-400')
-}
+// function getARandomAlphabet() {
+//     // get or create an alphabet array
+//     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
+//     const alphabets = alphabetString.split('');
+//     // console.log(alphabets);
 
-// remove color
-function removeBackgroundColor(elementId){
-   const element=document.getElementById(elementId);
-   element.classList.remove('bg-orange-400')
-}
-
+//     // get a random index between 0 -25
+//     const randomNumber = Math.random() * 25;
+//     const index = Math.round(randomNumber);
+   
+//     const alphabet = alphabets[index];
+//     // console.log(index, alphabet);
+//     return alphabet;
+// }
